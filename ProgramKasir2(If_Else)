@@ -1,0 +1,58 @@
+package bp1_2021;
+import java.util.Scanner;
+public class ProgramPercabanganIfElse {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int jmlbrng;
+        double satuan,Harga,bayar = 0,kembali,terbayar;
+        
+        System.out.println("PROGRAM KASIR SEDERHANA ");
+        System.out.print("JUMLAH BARANG YANG DIBELI  : ");
+         jmlbrng = input.nextInt();
+        System.out.print("HARGA SATUAN BARANG        : Rp ");
+        satuan = input.nextDouble();
+        Harga = jmlbrng*satuan;
+        System.out.println("TOTAL HARGA                : Rp "+ Harga);
+        if (Harga<100000 ){
+        System.out.println("DISKON                     : 0%");
+        bayar = (Harga - (Harga*0));
+        System.out.println("TOTAL BAYAR                : Rp "+ bayar);
+        }else if(Harga == 100000){
+        System.out.println("DISKON                    : 0%");
+        bayar = (Harga - (Harga*0));
+        System.out.println("TOTAL BAYAR                : Rp "+ bayar);
+        }else if(100000<Harga && 200001>Harga){
+        System.out.println("DISKON                     : 5%");
+        bayar = (Harga - (Harga*0.05));
+        System.out.println("TOTAL BAYAR                : Rp "+ bayar);
+        }else if(200000<Harga && 300001>Harga){
+        System.out.println("DISKON                     : 10%");
+        bayar = (Harga - (Harga*0.01)); 
+        System.out.println("TOTAL BAYAR                : Rp "+ bayar);
+        }else if(300000<Harga && 400001>Harga){
+        System.out.println("DISKON                     : 15%");
+        bayar = (Harga - (Harga*0.15));
+        System.out.println("TOTAL BAYAR                : Rp "+ bayar);
+        }else if(400000<Harga && 500001>Harga){
+        System.out.println("DISKON                     : 20%");
+        bayar = (Harga - (Harga*0.2));
+        System.out.println("TOTAL BAYAR                : Rp "+ bayar); 
+        }else if(Harga > 500000){
+        System.out.println("DISKON                     : 25%");
+        bayar = (Harga - (Harga*0.25));  
+        System.out.println("TOTAL BAYAR                : Rp "+ bayar); 
+        }else {
+            System.out.println("TIDAK TERDETEKSI");
+        }
+        System.out.print("JUMLAH TERBAYAR            : Rp ");
+        terbayar = input.nextDouble();
+        kembali = terbayar-bayar; 
+        if(kembali==0){
+            System.out.println("UANG PAS");
+        }else {
+            System.out.println("TOTAL KEMBALIAN            : Rp "+kembali);
+        }
+        System.out.println("TERIMA KASIH TELAH BERBELANJA DI TOKO KAMI");
+    }
+}
